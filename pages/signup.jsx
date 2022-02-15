@@ -23,19 +23,19 @@ function signup() {
                         <div className='mt-5 mx-12'>
                             <label htmlFor="name" className='block'>
                                 <span className='block text-md font-medium text-slate-700'>Your Name</span>
-                                <input type="text" id='name' className='form-input px-4 py-3 w-72 rounded-full shaddow-sm border border-slate-200 invalid:border-pink-500 invalid:text-pink-600 focus:invalid:border-pink-500 focus:invalid:ring-pink-500 ' placeholder='Your name...' autoComplete='off' onChange={(e) => { setName(e.target.value) }} />
+                                <input type="text" id='name' className='form-input placehold px-4 py-3 w-72 rounded-full shaddow-sm border border-slate-200 invalid:border-pink-500 invalid:text-pink-600 focus:invalid:border-pink-500 focus:invalid:ring-pink-500 ' placeholder='Your name...' autoComplete='off' onChange={(e) => { setName(e.target.value) }} />
                             </label>
                         </div>
                         <div className='mt-5 mx-12'>
                             <label htmlFor="email" className='block'>
                                 <span className='block text-md font-medium text-slate-700'>Email</span>
-                                <input type="email" id='email' className='form-input px-4 py-3 w-72 rounded-full shaddow-sm border border-slate-200 invalid:border-pink-500 invalid:text-pink-600 focus:invalid:border-pink-500 focus:invalid:ring-pink-500 ' placeholder='example@mail.com' autoComplete='off' onChange={(e) => { setEmail(e.target.value) }} />
+                                <input type="email" id='email' className='form-input placehold px-4 py-3 w-72 rounded-full shaddow-sm border border-slate-200 invalid:border-pink-500 invalid:text-pink-600 focus:invalid:border-pink-500 focus:invalid:ring-pink-500 ' placeholder='example@mail.com' autoComplete='off' onChange={(e) => { setEmail(e.target.value) }} />
                             </label>
                         </div>
                         <div className='mt-3 mx-12'>
                             <label htmlFor="password" className='block'>
                                 <span className='block text-md font-medium text-slate-700'>Password</span>
-                                <input type="password" id='password' className='form-input px-4 py-3 w-72 rounded-full shaddow-sm border border-slate-200' placeholder='Password' onChange={(e) => { setPassword(e.target.value) }} />
+                                <input type="password" id='password' className='form-input placehold px-4 py-3 w-72 rounded-full shaddow-sm border border-slate-200' placeholder='Password' onChange={(e) => { setPassword(e.target.value) }} />
                             </label>
                         </div>
                         <div className='mt-3'>
