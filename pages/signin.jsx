@@ -10,9 +10,9 @@ function signin() {
     console.log(email, password);
     return (
         <>
-            <div className=' flex flex-row'>
-                <div className='mt-32 mx-16 md:shrink-0'>
-                    <Image src={LogoLogin} alt='logo login' ></Image>
+            <div className='md:flex md:flex-row'>
+                <div className='mt-32 mx-16 md:shrink-0 md:pl-32'>
+                    <Image src={LogoLogin} alt='logo login' width={300} height={300} ></Image>
                 </div>
                 <div className='continer max-w-sm h-auto mx-auto mt-32 content-end bg-white drop-shadow-xl rounded-xl md:'>
                     <h2 className='text-center pt-5 text-2xl text-primary'>Sign In</h2>
