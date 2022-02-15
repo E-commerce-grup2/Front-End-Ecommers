@@ -14,13 +14,13 @@ function signin() {
                 <div className='mt-32 mx-16 md:shrink-0 md:pl-32'>
                     <Image src={LogoLogin} alt='logo signin' width={300} height={300} ></Image>
                 </div>
-                <div className='continer max-w-sm h-auto mx-auto mt-32 content-end bg-white drop-shadow-xl rounded-xl'>
+                <div className='continer max-w-sm h-auto mx-auto mt-32 bg-white drop-shadow-xl rounded-xl'>
                     <h2 className='text-center pt-5 text-2xl text-primary'>Sign In</h2>
                     <form action="">
                         <div className='mt-5 mx-12'>
-                            <label htmlFor="username" className='block'>
-                                <span className='block text-lg font-medium text-slate-700'>Username</span>
-                                <input type="email" id='username' className='form-input px-4 py-3 w-72 rounded-full shaddow-sm border border-slate-200 invalid:border-pink-500 invalid:text-pink-600 focus:invalid:border-pink-500 focus:invalid:ring-pink-500 ' placeholder='Username' autoComplete='off' onChange={(e) => { setEmail(e.target.value) }} />
+                            <label htmlFor="email" className='block'>
+                                <span className='block text-lg font-medium text-slate-700'>Email</span>
+                                <input type="email" id='email' className='form-input px-4 py-3 w-72 rounded-full shaddow-sm border border-slate-200 invalid:border-pink-500 invalid:text-pink-600 focus:invalid:border-pink-500 focus:invalid:ring-pink-500 ' placeholder='example@mail.com' autoComplete='off' onChange={(e) => { setEmail(e.target.value) }} />
                             </label>
                         </div>
                         <div className='mt-3 mx-12'>
