@@ -5,6 +5,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      
+      fontFamily: {
+        poppins: ["Poppins"]
+  },
       colors: {
         'primary': '#FA1D58'
       },
@@ -26,3 +30,4 @@ module.exports = {
     }),
   ],
 }
+
