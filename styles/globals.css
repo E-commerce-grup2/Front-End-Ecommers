@@ -22,3 +22,11 @@ a {
   font-family: "Inter", sans-serif;
   box-sizing: border-box;
 }
+
+.placehold{
+@apply placeholder:italic placeholder:text-slate-400 placeholder:text-sm
+}
+
+.select-cart{
+@apply block appearance-none w-full border border-slate-200 rounded shadow leading-tight
+}
