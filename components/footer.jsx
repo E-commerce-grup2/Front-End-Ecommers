@@ -6,8 +6,8 @@ import { AiFillInstagram } from "react-icons/ai";
 
 function Footer() {
   return (
-    <div>
-      <div className="bg-black flex flex-col items-center lg:flex-row justify-between px-4 lg:py-2">
+    <>
+      <div className="bg-black flex flex-col items-center lg:flex-row justify-between px-4 lg:py-2 relative">
         <div className=" mt-2 lg:mt-0 lg:px-4">
           <a href="#" className="uppercase text-white hover:text-rose-600">
             Privacy Policy
@@ -36,7 +36,7 @@ function Footer() {
           </a>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

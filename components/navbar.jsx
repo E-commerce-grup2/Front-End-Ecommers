@@ -5,12 +5,22 @@ import { ChevronDownIcon } from "@heroicons/react/solid";
 import imgLogo1 from "../img/st,small,507x507-pad,600x600,f8f8f8 1.png";
 import imgLogo2 from "../img/Group 107.png";
 import Image from "next/image";
+import { useRouter } from 'next/router'
 
 function navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const getToken = typeof window !== 'undefined' ? localStorage.getItem('token') : null
+  const router = useRouter()
 
   function classNames(...classes) {
     return classes.filter(Boolean).join(" ");
+  }
+
+  // function logout
+  function Logout() {
+    if (getToken) {
+      localStorage.removeItem('token')
+    }
   }
 
   return (
@@ -25,10 +35,7 @@ function navbar() {
           </div>
           <div className="flex items-center justify-between px-4 py-3 lg:py-0 border-b-2 lg:border-b-0">
             <div>
-              <button
-                onClick={() => {
-                  setIsOpen(!isOpen);
-                }}
+              <button onClick={() => { setIsOpen(!isOpen) }}
                 className=" focus:outline-none text-black block lg:hidden"
               >
                 <svg
@@ -47,9 +54,9 @@ function navbar() {
                   />
                   <path
                     className={isOpen ? "block" : "hidden"}
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
                   />
                 </svg>
@@ -57,13 +64,12 @@ function navbar() {
             </div>
           </div>
           <div
-            className={`${
-              isOpen ? "block" : "hidden"
-            } lg:flex flex-col lg:flex-row justify-between w-full py-4 lg:py-0`}
+            className={`${isOpen ? "block" : "hidden"
+              } lg:flex flex-col lg:flex-row justify-between w-full py-4 lg:py-0`}
           >
             <div className="flex flex-col lg:flex-row">
               <a
-                href="#"
+                href="/"
                 className="block px-4 py-2 lg:py-5 font-semibold text-black hover:text-rose-600"
               >
                 Home
@@ -157,35 +163,29 @@ function navbar() {
                 </Transition>
               </Menu>
               <a
-                href="#"
+                href="/help"
                 className="block px-4 py-2 lg:py-5 font-semibold text-black hover:text-rose-600"
               >
                 {" "}
                 Help
               </a>
             </div>
-
-            <div className="flex flex-col lg:flex-row">
-              <a
-                href="#"
-                className="block px-4 py-2 font-semibold lg:py-5 lg:px-10 text-black  hover:text-rose-600"
-              >
-                {" "}
-                Create Account
-              </a>
-              <div className="block px-4 py-2 lg:py-5 space-x-1">
-                <a
-                  href=""
-                  className=" px-8 py-3 bg-rose-600 font-semibold  hover:bg-white text-white hover:text-yellow-800 rounded-2xl transition duration-300"
-                >
-                  Login
-                </a>
+            {getToken ? (
+              <div className="flex flex-col lg:flex-row">
+                <div className="block px-4 py-2 lg:py-5 space-x-1">
+                  <a href="/" className=" px-8 py-3 bg-rose-600 font-semibold  hover:bg-white text-white hover:text-yellow-800 rounded-2xl transition duration-300" onClick={Logout}>Logout</a>
+                </div>
               </div>
-            </div>
+            ) : (<div className="flex flex-col lg:flex-row">
+              <a href="/signup" className="block px-4 py-2 font-semibold lg:py-5 lg:px-10 text-black  hover:text-rose-600"> {" "} Create Account </a>
+              <div className="block px-4 py-2 lg:py-5 space-x-1">
+                <a href="/signin" className=" px-8 py-3 bg-rose-600 font-semibold first-letter:hover:bg-white text-white hover:text-yellow-800 rounded-2xl transition duration-300">Login</a>
+              </div>
+            </div>)}
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 }
 
