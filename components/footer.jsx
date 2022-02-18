@@ -3,15 +3,18 @@ import Image from "next/image";
 import imgFooter from "../img/Group 108.png";
 import { BsWhatsapp } from "react-icons/bs";
 import { AiFillInstagram } from "react-icons/ai";
+import Link from "next/link";
 
 function Footer() {
   return (
     <>
       <div className="bg-black flex flex-col items-center lg:flex-row justify-between px-4 lg:py-2 relative">
         <div className=" mt-2 lg:mt-0 lg:px-4">
-          <a href="#" className="uppercase text-white hover:text-rose-600">
-            Privacy Policy
-          </a>
+          <Link href="/privacyPolicy">
+            <a href="#" className="uppercase text-white hover:text-rose-600">
+              Privacy Policy
+            </a>
+          </Link>
         </div>
         <div className="mt-2 lg:mt-0">
           <a href="" className=" text-white hover:text-rose-600 ">
