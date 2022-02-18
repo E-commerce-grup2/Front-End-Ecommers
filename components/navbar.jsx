@@ -5,6 +5,7 @@ import { ChevronDownIcon } from "@heroicons/react/solid";
 import imgLogo1 from "../img/st,small,507x507-pad,600x600,f8f8f8 1.png";
 import imgLogo2 from "../img/Group 107.png";
 import Image from "next/image";
+import Link from "next/link";
 
 function navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -156,13 +157,15 @@ function navbar() {
                   </Menu.Items>
                 </Transition>
               </Menu>
-              <a
-                href="#"
-                className="block px-4 py-2 lg:py-5 font-semibold text-black hover:text-rose-600"
-              >
-                {" "}
-                Help
-              </a>
+              <Link href="/help">
+                <a
+                  href="#"
+                  className="block px-4 py-2 lg:py-5 font-semibold text-black hover:text-rose-600"
+                >
+                  {" "}
+                  Help
+                </a>
+              </Link>
             </div>
 
             <div className="flex flex-col lg:flex-row">
