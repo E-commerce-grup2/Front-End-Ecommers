@@ -17,34 +17,56 @@ function signin() {
 
     const router = useRouter()
 
+    // Toggle Sign In 
     function handleSubmit(e) {
         e.preventDefault();
-        const data = { email, password }
-        setLoading(true)
-        axios.post('http://18.136.193.63:8081/users/login', data)
-            .then(({ data }) => {
-                if (data) {
-                    setEmail('')
-                    setPassword('')
+        const isValid = formValidation()
+        if (isValid) {
+            const data = { email, password }
+            setLoading(true)
+            axios.post('http://18.136.193.63:8081/users/login', data)
+                .then(({ data }) => {
+                    if (data) {
+                        setEmail('')
+                        setPassword('')
+                        setTimeout(() => {
+                            setSuccess('')
+                            router.push('/')
+                        }, 2000);
+                        setSuccess(data.message)
+                        localStorage.setItem('token', data.data.token)
+                    }
+                })
+                .catch((err) => {
+                    setError(err.response.data.message)
                     setTimeout(() => {
-                        setSuccess('')
-                        router.push('/')
-                    }, 2000);
-                    setSuccess(data.message)
-                    localStorage.setItem('token', data.data.token)
-                }
-            })
-            .catch((err) => {
-                setError(err.response.data.message)
-                setTimeout(() => {
-                    setError('')
-                }, 3000);
-            })
-            .finally(() => {
-                setLoading(false)
-            })
-
+                        setError('')
+                    }, 3000);
+                })
+                .finally(() => {
+                    setLoading(false)
+                })
+        }
     }
+
+    // Function Validation 
+    const formValidation = () => {
+        const error = {}
+        let isValid = true
+
+        if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)) {
+            error.mailtag = 'Invalid Email'
+            isValid = false
+        }
+        if (password.length < 8) {
+            error.passleng = 'Password must be at least 8 chars long'
+            isValid = false
+        }
+        setError(error)
+        return isValid
+    }
+
+
     if (loading) {
         return (
             <div className='bg-black/25  h-screen relative'>
@@ -58,14 +80,16 @@ function signin() {
                 <div className='mt-28 mx-16 md:shrink-0 md:pl-32'>
                     <Image src={LogoLogin} alt='logo signin' width={300} height={300} ></Image>
                 </div>
-                {success && (
-                    <NotifSucc succs={success} />
-                )}
+                <div className='absolute w-80 h-auto right-5 z-30'>
+                    {success && (
+                        <NotifSucc succs={success} />
+                    )}
+                    {Object.keys(error).map((key) => {
+                        return <NotifErr errors={error[key]} />
+                    })}
+                </div>
                 <div className='continer max-w-sm h-auto mx-auto mt-28 bg-white drop-shadow-xl rounded-xl'>
                     <h2 className='text-center pt-5 text-2xl text-primary'>Sign In</h2>
-                    {error && (
-                        <NotifErr errors={error} />
-                    )}
                     <form>
                         <div className='mt-5 mx-12'>
                             <label className='block'>

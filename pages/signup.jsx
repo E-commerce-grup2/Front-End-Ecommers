@@ -18,45 +18,72 @@ function signup() {
 
     const router = useRouter()
 
+    // Toggle Sign Up
     function handleSubmit(e) {
         e.preventDefault();
-        const data = { name, email, password }
-        axios.post('http://18.136.193.63:8081/users/register', data)
-            .then(({ data }) => {
-                if (data) {
-                    setName('')
-                    setEmail('')
-                    setPassword('')
+        const isValid = formValidation()
+        if (isValid) {
+            const data = { name, email, password }
+            axios.post('http://18.136.193.63:8081/users/register', data)
+                .then(({ data }) => {
+                    if (data) {
+                        setName('')
+                        setEmail('')
+                        setPassword('')
+                        setTimeout(() => {
+                            setSuccess('')
+                            router.push('/signin')
+                        }, 2000);
+                        setSuccess(data.message)
+                    }
+                })
+                .catch((err) => {
+                    setError(err.response.data.message)
                     setTimeout(() => {
-                        setSuccess('')
-                        router.push('/signin')
-                    }, 2000);
-                    setSuccess(data.message)
-                }
-            })
-            .catch((err) => {
-                setError(err.response.data.message)
-                setTimeout(() => {
-                    setError('')
-                }, 3000);
-            })
-
+                        setError('')
+                    }, 3000);
+                })
+        }
     }
+
+    // Function Validation 
+    const formValidation = () => {
+        const error = {}
+        let isValid = true
+
+        if (name.trim().length < 0) {
+            error.nameShort = 'Name cannot empty'
+            isValid = false
+        }
+        if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)) {
+            error.mailtag = 'Invalid Email'
+            isValid = false
+        }
+        if (password.length < 8) {
+            error.passleng = 'Password must be at least 8 chars long'
+            isValid = false
+        }
+        setError(error)
+        return isValid
+    }
+
+
     return (
         <>
             <div className='flex flex-row relative'>
                 <div className='container h-screen tablet:max-w-screen-md tablet:drop-shadow-2xl'>
                     <Image src={bg1} alt='bg-signup'></Image>
                 </div>
-                {success && (
-                    <NotifSucc succs={success} />
-                )}
+                <div className='absolute w-80 h-auto right-5 z-30'>
+                    {success && (
+                        <NotifSucc succs={success} />
+                    )}
+                    {Object.keys(error).map((key) => {
+                        return <NotifErr errors={error[key]} />
+                    })}
+                </div>
                 <div className='continer absolute top-24 mx-14 bg-white drop-shadow-xl rounded-xl tablet:my-auto tablet:right-36'>
                     <h2 className='text-center pt-5 text-2xl text-primary'>Sign Up</h2>
-                    {error && (
-                        <NotifErr errors={error} />
-                    )}
-
                     <form>
                         <div className='form-control mt-5 mx-12'>
                             <label className='block'>
