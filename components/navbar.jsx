@@ -6,6 +6,7 @@ import imgLogo1 from "../img/st,small,507x507-pad,600x600,f8f8f8 1.png";
 import imgLogo2 from "../img/Group 107.png";
 import Image from "next/image";
 import { useRouter } from 'next/router'
+import Link from 'next/link'
 
 function navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,6 +21,7 @@ function navbar() {
   function Logout() {
     if (getToken) {
       localStorage.removeItem('token')
+      router.push('/')
     }
   }
 
@@ -67,13 +69,8 @@ function navbar() {
             className={`${isOpen ? "block" : "hidden"
               } lg:flex flex-col lg:flex-row justify-between w-full py-4 lg:py-0`}
           >
-            <div className="flex flex-col lg:flex-row">
-              <a
-                href="/"
-                className="block px-4 py-2 lg:py-5 font-semibold text-black hover:text-rose-600"
-              >
-                Home
-              </a>
+            <div className="flex flex-col lg:flex-row mx-auto items-center">
+              <p className="block px-4 py-2 lg:py-5 font-semibold text-black hover:text-rose-600"><Link href="/">Home</Link></p>
               <Menu as="div" className="relative inline-block text-left">
                 <div>
                   <Menu.Button className="inline-flex w-full font-semibold px-4 py-2 lg:py-5 hover:text-rose-600">
@@ -162,24 +159,18 @@ function navbar() {
                   </Menu.Items>
                 </Transition>
               </Menu>
-              <a
-                href="/help"
-                className="block px-4 py-2 lg:py-5 font-semibold text-black hover:text-rose-600"
-              >
-                {" "}
-                Help
-              </a>
+              <p className="block px-4 py-2 lg:py-5 font-semibold text-black hover:text-rose-600">{" "} <Link href="/help">Help</Link></p>
             </div>
             {getToken ? (
               <div className="flex flex-col lg:flex-row">
                 <div className="block px-4 py-2 lg:py-5 space-x-1">
-                  <a href="/" className=" px-8 py-3 bg-rose-600 font-semibold  hover:bg-white text-white hover:text-yellow-800 rounded-2xl transition duration-300" onClick={Logout}>Logout</a>
+                  <button className=" px-8 py-3 bg-rose-600 font-semibold  hover:bg-white text-white hover:text-rose-800 rounded-2xl transition duration-300" onClick={Logout}>Logout</button>
                 </div>
               </div>
-            ) : (<div className="flex flex-col lg:flex-row">
-              <a href="/signup" className="block px-4 py-2 font-semibold lg:py-5 lg:px-10 text-black  hover:text-rose-600"> {" "} Create Account </a>
+            ) : (<div className="flex flex-col lg:flex-row items-center">
+              <p className="block px-4 py-2 font-semibold lg:py-5 lg:px-10 text-black  hover:text-rose-600"> {" "}<Link href="/signup">Create Account</Link></p>
               <div className="block px-4 py-2 lg:py-5 space-x-1">
-                <a href="/signin" className=" px-8 py-3 bg-rose-600 font-semibold first-letter:hover:bg-white text-white hover:text-yellow-800 rounded-2xl transition duration-300">Login</a>
+                <button className=" px-8 py-3 bg-rose-600 font-semibold text-white hover:text-rose-800 hover:bg-rose-100 hover:drop-shadow-md rounded-2xl transition duration-300" onClick={() => { router.push('/signin') }}>Log In</button>
               </div>
             </div>)}
           </div>
