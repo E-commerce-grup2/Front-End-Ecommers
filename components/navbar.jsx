@@ -80,7 +80,7 @@ function navbar() {
               </p>
               <Menu as="div" className="relative inline-block text-left">
                 <div>
-                  <Menu.Button className="inline-flex w-full font-semibold px-4 py-2 lg:py-5 hover:text-rose-600">
+                  <Menu.Button className="inline-flex w-full font-semibold px-4 py-2 lg:py-5 hover:text-rose-600 ">
                     Categories
                     <ChevronDownIcon
                       className="-mr-1 ml-2 h-5 w-5"
