@@ -10,10 +10,12 @@ function homePage() {
           <p className="text-rose-600 font-semibold">
             Register to get Special Discount !
           </p>
+
           <p className=" w-[500px] mb-2 tracking-tight leading-[60px] font-poppins font-bold text-[60px] uppercase">
             {" "}
             most valuable wibu toys in town
           </p>
+
           <p className="text-[32px] leading-[40px] font-[400] tracking-tight uppercase mb-8">
             limited model kit collection by gundamnit
           </p>
