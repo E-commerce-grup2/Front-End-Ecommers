@@ -2,23 +2,13 @@ import React, { useState } from 'react'
 import Image from "next/image";
 import mainImg from "../img/Group 109.svg";
 import ReactLoading from 'react-loading';
+import NumberFormat from 'react-number-format';
 import { useRouter } from 'next/router';
+import axios from 'axios'
 
 
 export default function Home(props) {
 
-  const [state, setState] = useState([
-    {
-      title: 'One Piece',
-      desc: 'Lufhi one piece',
-      price: '200000'
-    },
-    {
-      title: 'Boruto',
-      desc: 'Kawaki Boruto',
-      price: '100000'
-    }
-  ])
 
   const router = useRouter()
   const items = props.products.data
@@ -88,9 +78,12 @@ export default function Home(props) {
                 <div className="rounded-lg shadow-lg bg-white w-52 hover:shadow-inherit active:bg-slate-50 cursor-pointer">
                   <img className="rounded-t-lg" src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" alt="" />
                   <div className="p-6">
-                    <h5 className="text-gray-900 text-xl font-medium mb-2 select-none" data-bs-toggle="tooltip">{el.Name}</h5>
-                    <p className="text-slate-400 text-sm mb-4 select-none">{el.Description}</p>
-                    <p className='text-base font-semibold antialiased select-none'>Rp{el.Price}</p>
+                    <h5 className="text-gray-900 text-base font-medium mb-2 select-none">{el.Name}</h5>
+                    <p className="text-slate-400 text-sm mb-4 text-justify select-none">{el.Description}</p>
+
+                    <p className='text-base font-semibold antialiased select-none'>
+                      <NumberFormat value={el.Price} displayType={'text'} thousandSeparator={true} prefix={'Rp'} decimalSeparator={'.'} />
+                    </p>
                   </div>
                 </div>
               </div>
@@ -100,7 +93,6 @@ export default function Home(props) {
             {/* End card product */}
           </div>
         </div>
-
       </section>
 
     </>
@@ -108,8 +100,8 @@ export default function Home(props) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch('http://18.136.193.63:8081/products')
-  const products = await res.json()
+  const res = await axios.get('http://18.136.193.63:8081/products')
+  const products = await res.data
   return {
     props: {
       products
