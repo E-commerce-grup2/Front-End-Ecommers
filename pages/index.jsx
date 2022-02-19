@@ -67,20 +67,19 @@ export default function Home(props) {
       </div>
 
       <section className="max-w-full">
-        <div className="py-10">
-          <div className="py-2">
-            <h1 className="text-center text-2xl font-semibold">All Products</h1>
+        <div className="py-16">
+          <div className="py-5 bg-yellow-500/60 shadow-sm">
+            <h1 className="text-center text-slate-600 text-3xl font-semibold">ALL PRODUCTS</h1>
           </div>
           <div className="mt-7 w-4/5 mx-auto flex flex-wrap justify-center py-3">
             {/* card product */}
             {items ? items.map((el, i) => (
-              <div className="flex justify-center mt-3 mx-3" key={i}>
+              <div className="flex justify-center mt-5 mx-3" key={i}>
                 <div className="rounded-lg shadow-lg bg-white w-52 hover:shadow-inherit active:bg-slate-50 cursor-pointer">
                   <img className="rounded-t-lg" src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" alt="" />
                   <div className="p-6">
                     <h5 className="text-gray-900 text-base font-medium mb-2 select-none">{el.Name}</h5>
                     <p className="text-slate-400 text-sm mb-4 text-justify select-none">{el.Description}</p>
-
                     <p className='text-base font-semibold antialiased select-none'>
                       <NumberFormat value={el.Price} displayType={'text'} thousandSeparator={true} prefix={'Rp'} decimalSeparator={'.'} />
                     </p>
