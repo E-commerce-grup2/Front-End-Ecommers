@@ -7,8 +7,8 @@ import Link from "next/link";
 
 function Footer() {
   return (
-    <div>
-      <div className="bg-black flex flex-col items-center lg:flex-row justify-between px-4 lg:py-2">
+    <>
+      <div className="bg-black flex flex-col items-center lg:flex-row justify-between px-4 lg:py-2 relative">
         <div className=" mt-2 lg:mt-0 lg:px-4">
           <Link href="/privacyPolicy">
             <a href="#" className="uppercase text-white hover:text-rose-600">
@@ -39,7 +39,7 @@ function Footer() {
           </a>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
