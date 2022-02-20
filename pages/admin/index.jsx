@@ -23,7 +23,7 @@ function adminPage(props) {
 
   useEffect(() => {
     dispatch(allStore.getAllProduct());
-    // console.log("cek data store updaate", dataStore);
+    // console.log("cek data store update", dataStore);
   }, [dispatch]);
 
   const [open, setOpen] = useState(false);
@@ -164,11 +164,7 @@ function adminPage(props) {
                 dataStore.map((el, i) => (
                   <div className="flex justify-center mt-5 mx-3" key={i}>
                     <div className="rounded-lg shadow-lg bg-white w-52 hover:shadow-inherit active:bg-slate-50 cursor-pointer mb-10">
-                      <img
-                        className="rounded-t-lg"
-                        src="https://mdbootstrap.com/img/new/standard/nature/184.jpg"
-                        alt=""
-                      />
+                      <img className="rounded-t-lg" src={el.Img} alt="" />
                       <div className="p-6">
                         <h5 className="text-gray-900 text-base font-normal mb-2 select-none">
                           {el.Name}

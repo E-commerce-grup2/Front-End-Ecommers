@@ -11,6 +11,7 @@ function editproduct() {
   const [productCategory, setProductCategory] = useState(1);
   const [productQty, setProductQty] = useState(0);
   const [productPrice, setProductPrice] = useState(0);
+  const [productImg, setProductImg] = useState("");
   const router = useRouter();
   const { id } = router.query;
   const getToken =
@@ -142,6 +143,7 @@ function editproduct() {
                         <label
                           for="formFile"
                           className="form-label inline-block mt-5 mb-2 text-gray-700 font-semibold"
+                          onChange={(e) => setProductImg(e.target.value)}
                         >
                           *Input Your Image Here
                         </label>

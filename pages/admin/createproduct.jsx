@@ -12,6 +12,7 @@ function Createproduct() {
   const [productPrice, setProductPrice] = useState(0);
   const [productCategory, setProductCategory] = useState(1);
   const [productQty, setProductQty] = useState(0);
+  const [productImg, setProductImg] = useState("");
   const router = useRouter();
   const getToken =
     typeof window !== "undefined" ? localStorage.getItem("token") : null;
@@ -23,6 +24,7 @@ function Createproduct() {
       qty: parseInt(productQty),
       category_id: parseInt(productCategory),
       description: productDesc,
+      img: productImg,
     };
 
     axios
@@ -140,6 +142,7 @@ function Createproduct() {
                         <label
                           for="formFile"
                           className="form-label inline-block mt-5 mb-2 text-gray-700 font-semibold"
+                          onChange={(e) => setProductImg(e.target.value)}
                         >
                           *Input Your Image Here
                         </label>
