@@ -17,12 +17,12 @@ export default function productCard(props) {
   <div class="max-w-sm w-full lg:max-w-full lg:flex ml-[-2px] mt-[5px] mb-[8px] mr-[5px]">
     <div class="max-w-[245px] w-full max-h-[145px] border-r border-b border-l border-t border-gray-400 lg:border-l rounded lg:border-t lg:border-gray-400 bg-[#FCFCFC] rounded-b lg:rounded-b-none lg:rounded-r-none p-4 flex flex-col justify-between leading-normal shadow-lg hover:shadow-inherit">
       <div class="max-w-[225px] max-h-[125px] mt-[-5px] flex items-justify flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden hover:shadow-inner active:bg-slate-50 cursor-pointer ">
-        <Image class="" src={productImage}  onClick={() => window.open("http://localhost:3000/product-detail")} />
+        <Image class="" src={productImage}  onClick={() => window.open("http://localhost:3000/id")} />
       </div>
     </div>  
     <div class="max-w-[245px] w-full max-h-[145px] border-r border-b border-l border-gray-400 lg:border-l lg:border-t lg:border-gray-400 bg-[#F3F0F0] rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal shadow-lg hover:shadow-inherit ">
     <div class="mb-8 mt-[-5px]">
-      <div class="text-gray-900 font-bold text-base">
+      <div class="mb-2 text-gray-900 font-bold text-base">
         Product name
       </div>
       <p class="text-green-700 text-sm mb-2">
