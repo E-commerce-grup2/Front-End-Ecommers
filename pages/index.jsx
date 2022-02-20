@@ -78,8 +78,8 @@ export default function Home(props) {
                 <div className="rounded-lg shadow-lg bg-white w-52 hover:shadow-inherit active:bg-slate-50 cursor-pointer">
                   <img className="rounded-t-lg" src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" alt="" />
                   <div className="p-6">
-                    <h5 className="text-gray-900 text-base font-medium mb-2 select-none">{el.Name}</h5>
-                    <p className="text-slate-400 text-sm mb-4 text-justify select-none">{el.Description}</p>
+                    <h5 className="text-gray-900 text-base font-normal mb-2 select-none">{el.Name}</h5>
+                    <p className="text-slate-400 text-sm mb-4 text-justify select-none truncate overflow-hidden">{el.Description}</p>
                     <p className='text-base font-semibold antialiased select-none'>
                       <NumberFormat value={el.Price} displayType={'text'} thousandSeparator={true} prefix={'Rp'} decimalSeparator={'.'} />
                     </p>
