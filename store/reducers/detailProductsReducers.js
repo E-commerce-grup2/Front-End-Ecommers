@@ -1,6 +1,6 @@
 const initialState = []
 
-const postReducers = (state = initialState, action) => {
+const detailProductsReducers = (state = initialState, action) => {
     if (action.type === "SET_POST") {
         if (Array.isArray(action.payload)) return action.payload
     }
@@ -8,4 +8,4 @@ const postReducers = (state = initialState, action) => {
     return state
 }
 
-export default postReducers
+export default detailProductsReducers

@@ -71,11 +71,11 @@ export default function Home(props) {
           <div className="py-5 bg-yellow-500/60 shadow-sm">
             <h1 className="text-center text-slate-600 text-3xl font-semibold">ALL PRODUCTS</h1>
           </div>
-          <div className="mt-7 w-4/5 mx-auto flex flex-wrap justify-center py-3">
-            {/* card product */}
-            {items ? items.map((el, i) => (
-              <div className="flex justify-center mt-5 mx-3" key={i}>
-                <div className="rounded-lg shadow-lg bg-white w-52 hover:shadow-inherit active:bg-slate-50 cursor-pointer">
+          <div className="mt-7 w-4/5 mx-auto">
+            <div className="flex flex-wrap justify-center py-3" >
+              {/* card product */}
+              {items ? items.map((el, i) => (
+                <div className="rounded-lg shadow-lg bg-white w-52 hover:shadow-inherit active:bg-slate-50 cursor-pointer mt-5 mx-3" key={i} onClick={()=>{ router.push(`/detail/${el.ID}`) }} >
                   <img className="rounded-t-lg" src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" alt="" />
                   <div className="p-6">
                     <h5 className="text-gray-900 text-base font-normal mb-2 select-none">{el.Name}</h5>
@@ -85,11 +85,11 @@ export default function Home(props) {
                     </p>
                   </div>
                 </div>
-              </div>
-            )) : (<div className='bg-black/25  h-screen relative'>
-              <ReactLoading className='mx-auto absolute inset-0 top-36' type='cylon' color='#FA1D58' height={300} width={300} />
-            </div>)}
-            {/* End card product */}
+              )) : (<div className='bg-black/25  h-screen relative'>
+                <ReactLoading className='mx-auto absolute inset-0 top-36' type='cylon' color='#FA1D58' height={300} width={300} />
+              </div>)}
+              {/* End card product */}
+            </div>
           </div>
         </div>
       </section>

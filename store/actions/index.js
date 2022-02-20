@@ -1,4 +1,6 @@
-import { setPost } from "./setPost";
+import { fetchDetailProducts, setPost } from "./setDetailProducts";
 
-const allStore = { setPost }
+const allStore = {
+    fetchDetailProducts, setPost,
+}
 export default allStore

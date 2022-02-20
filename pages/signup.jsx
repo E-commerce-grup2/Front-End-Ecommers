@@ -71,7 +71,7 @@ function signup() {
     return (
         <>
             <div className='flex flex-row relative'>
-                <div className='container h-screen tablet:max-w-screen-md tablet:drop-shadow-2xl'>
+                <div className='container min-h-screen tablet:max-h-full tablet:max-w-screen-md tablet:drop-shadow-2xl'>
                     <Image src={bg1} alt='bg-signup'></Image>
                 </div>
                 <div className='absolute w-80 h-auto right-5 z-30'>

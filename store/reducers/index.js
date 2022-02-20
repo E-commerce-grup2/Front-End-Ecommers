@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
-import listPost from './postReducers'
+import detailItem from './detailProductsReducers'
 
 const rootReducer = combineReducers({
-    listPost,
+    detailItem,
 })
 
 export default rootReducer
