@@ -1,8 +1,10 @@
 import { combineReducers } from "redux";
-import listPost from './postReducers'
+import listPost from "./postReducers";
+import adminData from "./adminReducer";
 
 const rootReducer = combineReducers({
-    listPost,
-})
+  listPost,
+  adminData,
+});
 
-export default rootReducer
+export default rootReducer;
