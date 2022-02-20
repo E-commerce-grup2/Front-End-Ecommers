@@ -23,7 +23,7 @@ export default function productCard(props) {
     <div class="max-w-[245px] w-full max-h-[145px] border-r border-b border-l border-gray-400 lg:border-l lg:border-t lg:border-gray-400 bg-[#F3F0F0] rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal shadow-lg hover:shadow-inherit ">
     <div class="mb-8 mt-[-5px]">
       <div class="mb-2 text-gray-900 font-bold text-base">
-        Product name
+        RG Gundam Unicorn
       </div>
       <p class="text-green-700 text-sm mb-2">
         <NumberFormat value={300000000} displayType={'text'} thousandSeparator={true} prefix={'Rp'} decimalSeparator={'.'} />
