@@ -7,8 +7,8 @@ export const fetchDetailProducts = () => {
             headers: { Authorization: `Bearer ${getToken}` }
         })
             .then(({ data }) => {
-                console.log(data);
-                // dispatch(setPost(data.data))
+                // console.log(data);
+                dispatch(setPost(data.data))
             })
             .catch(err => {
                 console.log(err.response);
@@ -18,6 +18,6 @@ export const fetchDetailProducts = () => {
 
 export const setPost = (payload) => {
     return {
-        type: "SET_POST", payload
+        type: "SET_DETAIL", payload
     }
 }

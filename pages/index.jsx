@@ -14,6 +14,7 @@ export default function Home(props) {
   const items = props.products.data
 
 
+
   return (
     <>
       <div className="grid grid-cols-2">
@@ -75,7 +76,7 @@ export default function Home(props) {
             <div className="flex flex-wrap justify-center py-3" >
               {/* card product */}
               {items ? items.map((el, i) => (
-                <div className="rounded-lg shadow-lg bg-white w-52 hover:shadow-inherit active:bg-slate-50 cursor-pointer mt-5 mx-3" key={i} onClick={()=>{ router.push(`/detail/${el.ID}`) }} >
+                <div className="rounded-lg shadow-lg bg-white w-52 hover:shadow-inherit active:bg-slate-50 cursor-pointer mt-5 mx-3" key={i} onClick={() => { router.push(`/detail/${el.ID}`) }} >
                   <img className="rounded-t-lg" src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" alt="" />
                   <div className="p-6">
                     <h5 className="text-gray-900 text-base font-normal mb-2 select-none">{el.Name}</h5>
