@@ -4,10 +4,10 @@ import bgimage from "../img/etc.png";
 import styles from "../styles/product.module.css";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";  
-import productCard from "../components/productCard"
+import Card from "../components/productCard"
 
 
-function product1() {
+function product4() {
     return (
     <div>
       <div className="grid grid-cols-1">
@@ -23,14 +23,16 @@ function product1() {
                 <Image src={bgimage} />
             </div>
         </div>
-        <div class="grid grid-rows-1 ">
+        <div class="grid grid-rows-1 mt-[10px]">
             <div>
-                INI ISI PRODUK
-                <productCard />
+                <Card />
+                <Card />
+                <Card />
             </div>
         </div>
       </div>
     </div>
     );
   }
-export default product1
+  
+export default product4

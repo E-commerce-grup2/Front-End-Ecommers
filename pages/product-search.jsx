@@ -5,6 +5,7 @@ import bgimage2 from "../img/ganyu 1.png";
 import styles from "../styles/product.module.css";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";  
+import Card from "../components/productCard";
 import productCard from "../components/productCard"
 import searchBar from "../components/searchbar"
 
@@ -61,10 +62,10 @@ function product() {
                 <Image className="bg1" src={bgimage} />
             </div>
         </div>
-        <div className="grid grid-rows">
-            <h1>INI SPACE PRODUK</h1>
-            <h1>INI SPACE PRODUK</h1>
-            <h1>INI SPACE PRODUK</h1>
+        <div className="grid grid-rows-3 mt-[10px]">
+            <Card />
+            <Card />
+            <Card />
         </div>
         <div className="grid grid-rows-1">
             <div className="mt-[-90px]" >

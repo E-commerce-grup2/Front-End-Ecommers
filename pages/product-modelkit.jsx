@@ -4,7 +4,7 @@ import bgimage from "../img/modelkit.png";
 import styles from "../styles/product.module.css";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";  
-import productCard from "../components/productCard"
+import Card from "../components/productCard"
 
 
 function product2() {
@@ -23,10 +23,11 @@ function product2() {
                 <Image src={bgimage} />
             </div>
         </div>
-        <div class="grid grid-rows-1">
+        <div class="grid grid-rows-1 mt-[10px]">
             <div>
-                Ini isi produk
-                <productCard />
+                <Card />
+                <Card />
+                <Card />
             </div>
         </div>
       </div>
