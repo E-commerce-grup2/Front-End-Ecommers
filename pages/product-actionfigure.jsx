@@ -11,15 +11,15 @@ function product1() {
     return (
     <div>
       <div className="grid grid-cols-1">
-        <div class="ml-[185px] mt-[20px]">
-          <p className=" mb-2 tracking-tight leading-[69px] font-poppins font-bold text-[60px] uppercase">
+        <div class="flex-auto text-right justify-left mt-[20px] mr-[185px]">
+          <p className="mb-2 tracking-tight leading-[69px] font-poppins font-bold text-[50px] uppercase">
               Action Figure Selection
           </p>
         </div>
       </div> 
       <div className="grid grid-cols-2">
         <div class="grid grid-rows-1">
-            <div class="ml-[-50px] mt-[10px]">
+            <div class="ml-[-50px] mt-[10px] mr-[5px]">
                 <Image src={bgimage} />
             </div>
         </div>

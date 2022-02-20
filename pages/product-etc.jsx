@@ -11,8 +11,8 @@ function product4() {
     return (
     <div>
       <div className="grid grid-cols-1">
-        <div class="ml-[185px] mt-[20px]">
-          <p className=" mb-2 tracking-tight leading-[69px] font-poppins font-bold text-[60px] uppercase">
+      <div class="flex-auto text-right mt-[20px] mr-[185px]">
+          <p className=" mb-2 tracking-tight leading-[69px] font-poppins font-bold text-[50px] uppercase">
               <p>Accessory & other stuff</p>
           </p>
         </div>
