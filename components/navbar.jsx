@@ -22,9 +22,13 @@ function navbar() {
   function Logout() {
     if (getToken) {
       localStorage.removeItem("token");
+      localStorage.removeItem("dataProfile");
       router.push("/");
     }
   }
+
+  const profile =
+    typeof window !== "undefined" ? localStorage.getItem("dataProfile") : null;
 
   return (
     <div>
@@ -178,6 +182,12 @@ function navbar() {
                 {" "}
                 <Link href="/help">Help</Link>
               </p>
+              {profile === "Admin" ? (
+                <p className="block px-4 py-2 lg:py-5 font-semibold text-black hover:text-rose-600">
+                  {" "}
+                  <Link href="/admin">Admin</Link>
+                </p>
+              ) : null}
             </div>
             {getToken ? (
               <div className="flex flex-col lg:flex-row">

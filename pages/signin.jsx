@@ -36,6 +36,7 @@ function signin() {
             }, 2000);
             setSuccess(data.message);
             localStorage.setItem("token", data.data.token);
+            localStorage.setItem("dataProfile", data.data.data.name);
           }
         })
         .catch((err) => {
@@ -57,10 +58,6 @@ function signin() {
 
     if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)) {
       error.mailtag = "Invalid Email";
-      isValid = false;
-    }
-    if (password.length < 8) {
-      error.passleng = "Password must be at least 8 chars long";
       isValid = false;
     }
     setError(error);
