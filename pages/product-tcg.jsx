@@ -11,15 +11,15 @@ function product3() {
     return (
     <div>
       <div className="grid grid-cols-1">
-        <div class="ml-[185px] mt-[20px]">
-          <p className=" mb-2 tracking-tight leading-[69px] font-poppins font-bold text-[60px] uppercase">
+        <div class="flex-auto text-right mt-[20px] mr-[185px]">
+          <p className=" mb-2 tracking-tight leading-[60px] font-poppins font-bold text-[50px] uppercase">
                Trading Card Game Selection
           </p>
         </div>
       </div> 
       <div className="grid grid-cols-2">
         <div class="grid grid-rows-1">
-            <div class="ml-[-170px] mt-[-80px]">
+            <div class="ml-[-100px] mt-[-35px]">
                 <Image src={bgimage} />
             </div>
         </div>
