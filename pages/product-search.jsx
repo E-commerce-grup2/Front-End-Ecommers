@@ -3,11 +3,9 @@ import Image from "next/image";
 import bgimage from "../img/rem 1.png";
 import bgimage2 from "../img/ganyu 1.png";
 import styles from "../styles/product.module.css";
-import Navbar from "../components/navbar";
-import Footer from "../components/footer";  
 import Card from "../components/productCard";
-import productCard from "../components/productCard"
-import searchBar from "../components/searchbar"
+import axios from 'axios'
+import { useRouter } from 'next/router';
 
 
 function product() {
@@ -31,7 +29,7 @@ function product() {
                     class="btn px-5 py-2.5 bg-black text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out flex items-center"
                     type="button"
                     id="button-addon2"
-                    >
+                    onClick={() => window.open("http://localhost:3000/product-search", "_blank")}>  
                     <p className="px-2">search</p>
                     <svg
                         aria-hidden="true"
