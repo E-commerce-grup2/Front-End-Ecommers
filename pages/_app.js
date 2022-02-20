@@ -14,6 +14,7 @@ const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)))
 function MyApp({ Component, pageProps }) {
 
   return (
+
     <Provider store={store}>
       <Layout>
         <Component {...pageProps} />
