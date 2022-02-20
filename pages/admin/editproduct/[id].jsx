@@ -24,6 +24,7 @@ function editproduct() {
       price: parseInt(productPrice),
       category_id: parseInt(productCategory),
       description: productDescription,
+      img: productImg,
     };
 
     axios
