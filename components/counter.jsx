@@ -1,5 +1,3 @@
-
-
 function counter(){
     return(
         <div class="ml-[-7px] flex justify-center">
@@ -30,7 +28,7 @@ function counter(){
         </div>
       </div>
     )
+
 }
 
-export default counter
-
+export default counter;

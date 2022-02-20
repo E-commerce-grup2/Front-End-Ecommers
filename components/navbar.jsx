@@ -5,13 +5,14 @@ import { ChevronDownIcon } from "@heroicons/react/solid";
 import imgLogo1 from "../img/st,small,507x507-pad,600x600,f8f8f8 1.png";
 import imgLogo2 from "../img/Group 107.png";
 import Image from "next/image";
-import { useRouter } from 'next/router'
-import Link from 'next/link'
+import { useRouter } from "next/router";
+import Link from "next/link";
 
 function navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const getToken = typeof window !== 'undefined' ? localStorage.getItem('token') : null
-  const router = useRouter()
+  const getToken =
+    typeof window !== "undefined" ? localStorage.getItem("token") : null;
+  const router = useRouter();
 
   function classNames(...classes) {
     return classes.filter(Boolean).join(" ");
@@ -20,10 +21,14 @@ function navbar() {
   // function logout
   function Logout() {
     if (getToken) {
-      localStorage.removeItem('token')
-      router.push('/')
+      localStorage.removeItem("token");
+      localStorage.removeItem("dataProfile");
+      router.push("/");
     }
   }
+
+  const profile =
+    typeof window !== "undefined" ? localStorage.getItem("dataProfile") : null;
 
   return (
     <div>
@@ -37,7 +42,10 @@ function navbar() {
           </div>
           <div className="flex items-center justify-between px-4 py-3 lg:py-0 border-b-2 lg:border-b-0">
             <div>
-              <button onClick={() => { setIsOpen(!isOpen) }}
+              <button
+                onClick={() => {
+                  setIsOpen(!isOpen);
+                }}
                 className=" focus:outline-none text-black block lg:hidden"
               >
                 <svg
@@ -66,11 +74,14 @@ function navbar() {
             </div>
           </div>
           <div
-            className={`${isOpen ? "block" : "hidden"
-              } lg:flex flex-col lg:flex-row justify-between w-full py-4 lg:py-0`}
+            className={`${
+              isOpen ? "block" : "hidden"
+            } lg:flex flex-col lg:flex-row justify-between w-full py-4 lg:py-0`}
           >
             <div className="flex flex-col lg:flex-row mx-auto items-center">
-              <p className="block px-4 py-2 lg:py-5 font-semibold text-black hover:text-rose-600"><Link href="/">Home</Link></p>
+              <p className="block px-4 py-2 lg:py-5 font-semibold text-black hover:text-rose-600">
+                <Link href="/">Home</Link>
+              </p>
               <Menu as="div" className="relative inline-block text-left">
                 <div>
                   <Menu.Button className="inline-flex w-full font-semibold px-4 py-2 lg:py-5 hover:text-rose-600">
@@ -95,63 +106,71 @@ function navbar() {
                     <div className="py-1">
                       <Menu.Item>
                         {({ active }) => (
-                          <a
-                            href="#"
-                            className={classNames(
-                              active
-                                ? "bg-gray-100 text-gray-900"
-                                : "text-gray-700",
-                              "block px-4 py-2 text-sm"
-                            )}
-                          >
-                            Action Figures
-                          </a>
+                          <Link href="/product-actionfigure">
+                            <a
+                              href="#"
+                              className={classNames(
+                                active
+                                  ? "bg-gray-100 text-gray-900"
+                                  : "text-gray-700",
+                                "block w-full px-4 py-2 text-sm cursor-pointer"
+                              )}
+                            >
+                              Action Figures
+                            </a>
+                          </Link>
                         )}
                       </Menu.Item>
                       <Menu.Item>
                         {({ active }) => (
-                          <a
-                            href="#"
-                            className={classNames(
-                              active
-                                ? "bg-gray-100 text-gray-900"
-                                : "text-gray-700",
-                              "block px-4 py-2 text-sm"
-                            )}
-                          >
-                            Trading Card
-                          </a>
+                          <Link href="/product-tcg">
+                            <a
+                              href="#"
+                              className={classNames(
+                                active
+                                  ? "bg-gray-100 text-gray-900"
+                                  : "text-gray-700",
+                                "block w-full px-4 py-2 text-sm cursor-pointer"
+                              )}
+                            >
+                              Trading Card
+                            </a>
+                          </Link>
                         )}
                       </Menu.Item>
                       <Menu.Item>
                         {({ active }) => (
-                          <a
-                            href="#"
-                            className={classNames(
-                              active
-                                ? "bg-gray-100 text-gray-900"
-                                : "text-gray-700",
-                              "block px-4 py-2 text-sm"
-                            )}
-                          >
-                            Model Kit Selection
-                          </a>
+                          <Link href="/product-modelkit">
+                            <a
+                              href="#"
+                              className={classNames(
+                                active
+                                  ? "bg-gray-100 text-gray-900"
+                                  : "text-gray-700",
+                                "block w-full px-4 py-2 text-sm cursor-pointer"
+                              )}
+                            >
+                              Model Kit Selection
+                            </a>
+                          </Link>
                         )}
                       </Menu.Item>
                       <form method="POST" action="#">
                         <Menu.Item>
                           {({ active }) => (
-                            <button
-                              type="submit"
-                              className={classNames(
-                                active
-                                  ? "bg-gray-100 text-gray-900"
-                                  : "text-gray-700",
-                                "block w-full text-left px-4 py-2 text-sm"
-                              )}
-                            >
-                              Accessories and Other Stuff
-                            </button>
+                            <Link href="/product-etc">
+                              <a
+                                type=""
+                                className={classNames(
+                                  active
+                                    ? "bg-gray-100 text-gray-900"
+                                    : "text-gray-700",
+                                  "block w-full text-left px-4 py-2 text-sm cursor-pointer"
+                                )}
+                              >
+                                Accessories and Other Stuff
+                              </a>
+                            </Link>
                           )}
                         </Menu.Item>
                       </form>
@@ -159,24 +178,50 @@ function navbar() {
                   </Menu.Items>
                 </Transition>
               </Menu>
-              <p className="block px-4 py-2 lg:py-5 font-semibold text-black hover:text-rose-600">{" "} <Link href="/help">Help</Link></p>
+              <p className="block px-4 py-2 lg:py-5 font-semibold text-black hover:text-rose-600">
+                {" "}
+                <Link href="/help">Help</Link>
+              </p>
+              {profile === "Admin" ? (
+                <p className="block px-4 py-2 lg:py-5 font-semibold text-black hover:text-rose-600">
+                  {" "}
+                  <Link href="/admin">Admin</Link>
+                </p>
+              ) : null}
             </div>
             {getToken ? (
               <div className="flex flex-col lg:flex-row">
                 <div className="block px-4 py-2 lg:py-5 space-x-1">
-                  <button className=" px-8 py-3 bg-rose-600 font-semibold  hover:bg-white text-white hover:text-rose-800 rounded-2xl transition duration-300" onClick={Logout}>Logout</button>
+                  <button
+                    className=" px-8 py-3 bg-rose-600 font-semibold  hover:bg-white text-white hover:text-rose-800 rounded-2xl transition duration-300"
+                    onClick={Logout}
+                  >
+                    Logout
+                  </button>
                 </div>
               </div>
-            ) : (<div className="flex flex-col lg:flex-row items-center">
-              <p className="block px-4 py-2 font-semibold lg:py-5 lg:px-10 text-black  hover:text-rose-600"> {" "}<Link href="/signup">Create Account</Link></p>
-              <div className="block px-4 py-2 lg:py-5 space-x-1">
-                <button className=" px-8 py-3 bg-rose-600 font-semibold text-white hover:text-rose-800 hover:bg-rose-100 hover:drop-shadow-md rounded-2xl transition duration-300" onClick={() => { router.push('/signin') }}>Log In</button>
+            ) : (
+              <div className="flex flex-col lg:flex-row items-center">
+                <p className="block px-4 py-2 font-semibold lg:py-5 lg:px-10 text-black  hover:text-rose-600">
+                  {" "}
+                  <Link href="/signup">Create Account</Link>
+                </p>
+                <div className="block px-4 py-2 lg:py-5 space-x-1">
+                  <button
+                    className=" px-8 py-3 bg-rose-600 font-semibold text-white hover:text-rose-800 hover:bg-rose-100 hover:drop-shadow-md rounded-2xl transition duration-300"
+                    onClick={() => {
+                      router.push("/signin");
+                    }}
+                  >
+                    Log In
+                  </button>
+                </div>
               </div>
-            </div>)}
+            )}
           </div>
         </div>
       </div>
-    </div >
+    </div>
   );
 }
 
