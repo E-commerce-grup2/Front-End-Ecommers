@@ -112,6 +112,56 @@ export default function Home(props) {
               </div>
             )}
             {/* End card product */}
+            <div className="mt-7 w-4/5 mx-auto">
+              <div className="flex flex-wrap justify-center py-3">
+                {/* card product */}
+                {items ? (
+                  items.map((el, i) => (
+                    <div
+                      className="rounded-lg shadow-lg bg-white w-52 hover:shadow-inherit active:bg-slate-50 cursor-pointer mt-5 mx-3"
+                      key={i}
+                      onClick={() => {
+                        router.push(`/detail/${el.ID}`);
+                      }}
+                    >
+                      <img
+                        className="rounded-t-lg"
+                        src="https://mdbootstrap.com/img/new/standard/nature/184.jpg"
+                        alt=""
+                      />
+                      <div className="p-6">
+                        <h5 className="text-gray-900 text-base font-normal mb-2 select-none">
+                          {el.Name}
+                        </h5>
+                        <p className="text-slate-400 text-sm mb-4 text-justify select-none truncate overflow-hidden">
+                          {el.Description}
+                        </p>
+                        <p className="text-base font-semibold antialiased select-none">
+                          <NumberFormat
+                            value={el.Price}
+                            displayType={"text"}
+                            thousandSeparator={true}
+                            prefix={"Rp"}
+                            decimalSeparator={"."}
+                          />
+                        </p>
+                      </div>
+                    </div>
+                  ))
+                ) : (
+                  <div className="bg-black/25  h-screen relative">
+                    <ReactLoading
+                      className="mx-auto absolute inset-0 top-36"
+                      type="cylon"
+                      color="#FA1D58"
+                      height={300}
+                      width={300}
+                    />
+                  </div>
+                )}
+                {/* End card product */}
+              </div>
+            </div>
           </div>
         </div>
       </section>
