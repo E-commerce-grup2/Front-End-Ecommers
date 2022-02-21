@@ -2,14 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;400;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Poppins&family=Roboto:wght@700&display=swap");
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {
@@ -18,6 +17,29 @@ a {
 }
 
 * {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   box-sizing: border-box;
+}
+
+.placehold{
+@apply placeholder:italic placeholder:text-slate-400 placeholder:text-sm
+}
+
+.select-cart{
+@apply block appearance-none w-full border border-slate-200 rounded shadow leading-tight
+}
+
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.custom-number-input input:focus {
+  outline: none !important;
+}
+
+.custom-number-input button:focus {
+  outline: none !important;
 }
