@@ -69,7 +69,7 @@ function CartDetail() {
                             </div>
                         </div>
                         <div className='absolute translate-x-24 top-48'>
-                            <button className='bg-green-500 px-7 py-3 rounded-md text-white font-semibold block mx-auto hover:bg-green-600 hover:-translate-y-1 hover:scale-110 duration-100 active:bg-green-700'>Proced Paymend</button>
+                            <button className='bg-green-500 px-7 py-3 rounded-md text-white font-normal block mx-auto hover:bg-green-600 hover:-translate-y-1 hover:scale-110 duration-100 active:bg-green-700'>Proced Paymend</button>
                         </div>
                     </div>
                 </div>
