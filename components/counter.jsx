@@ -1,21 +1,46 @@
-import Script from "next/script"
-
 function counter(){
     return(
-    <div class="custom-number-input h-8 w-32">
-        <div class="flex flex-row h-8 w-full rounded-lg relative bg-transparent mt-1">
-            <button data-action="decrement" class=" bg-red-500 text-black hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-l cursor-pointer outline-none">
-                <span class="m-auto text-2xl font-thin">−</span>
-            </button>
-            <input type="number" class="outline-none focus:outline-none text-center w-full bg-white font-semibold text-md hover:text-black focus:text-black  md:text-basecursor-default flex items-center text-gray-700  outline-none" name="custom-input-number" value="0"></input>
-            <button data-action="increment" class="bg-green-500 text-black hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-r cursor-pointer">
-                <span class="m-auto text-2xl font-thin">+</span>
-            </button>
+        <div class="ml-[-7px] flex justify-center">
+        <div class="xl:w-75">
+          <button
+            class="mt-[-5px] text-black text-center text-sm font-semibold bg-red-700 rounded-xl px-2  focus:outline-none border border-gray-800 focus:border-gray-600
+            hover:bg-white hover:text-[#FA1D58] hover:drop-shadow-md focus:ring-1 focus:ring-pink-500">
+            -
+          </button>
+          <button
+            class="mt-[-5px] ml-[55px] text-black text-center text-sm font-semibold bg-green-700 rounded-xl px-1.5  focus:outline-none border border-gray-800 focus:border-gray-600
+            hover:bg-white hover:text-[#FA1D58] hover:drop-shadow-md focus:ring-1 focus:ring-pink-500">
+            +
+          </button>
+          <input
+            type="number"
+            class="
+              text-center 
+              form-control
+              block
+              w-[45px]
+              px-3
+              py-0.1
+              text-base
+              font-normal
+              text-gray-700
+              bg-white bg-clip-padding
+              border border-solid border-black
+              rounded
+              transition
+              ease-in-out
+              m-0
+              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+              ml-[29px]
+              mt-[-24px]
+            "
+            id="totalquantity"
+            placeholder="0"
+          />
         </div>
-    </div>
-
+      </div>
     )
+
 }
 
-export default counter
-
+export default counter;
